@@ -1,6 +1,8 @@
 import styles from './Login.module.css';
+// services
 import { auth, googleProvider } from '../../firebase/config';
 import { signInWithPopup } from 'firebase/auth';
+//
 import { useNavigate } from 'react-router-dom';
 
 export default function Login({ setIsAuth }) {

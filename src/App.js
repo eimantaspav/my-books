@@ -3,20 +3,31 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Search from './pages/search/Search';
 import Signup from './pages/signup/Signup';
-import Wishlist from './pages/wishlist/Wishlist'; // componenets
+import Wishlist from './pages/wishlist/Wishlist';
+// componenets
 import Navbar from './components/navbar/Navbar';
+// services
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase/config';
 // hooks
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // router
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
-// services
-import { auth } from './firebase/config';
 
 function App() {
   // check if logged in
   const [isAuth, setIsAuth] = useState(false);
-
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    onAuthStateChanged(auth, currentUser => {
+      setUser(currentUser);
+      if (user) {
+        setIsAuth(true);
+      }
+      console.log(currentUser);
+    });
+  }, [user]);
+  //
   return (
     <BrowserRouter>
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth} />

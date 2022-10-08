@@ -1,11 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
+//services
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/config';
 
 export default function Navbar({ isAuth, setIsAuth }) {
   let navigate = useNavigate();
-
-  // sign out
+  //
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear();
