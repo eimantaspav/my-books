@@ -1,0 +1,22 @@
+.container {
+  margin: 0 auto;
+}
+
+.search__books {
+  place-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30rem);
+  gap: 5rem;
+}
+
+.search__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.search__card img {
+  width: 10rem;
+}

@@ -1,0 +1,43 @@
+.home {
+}
+
+.home h2 {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.home__empty {
+  text-align: center;
+  margin-top: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.home__empty img {
+  width: 20%;
+}
+
+.home__books {
+  place-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30rem);
+  gap: 5rem;
+}
+
+.home__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.home__card img {
+  width: 10rem;
+}

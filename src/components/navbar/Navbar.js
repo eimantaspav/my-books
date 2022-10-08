@@ -1,3 +1,5 @@
+import styles from './Navbar.module.css';
+//
 import { Link, useNavigate } from 'react-router-dom';
 //services
 import { signOut } from 'firebase/auth';
@@ -14,23 +16,17 @@ export default function Navbar({ isAuth, setIsAuth, user }) {
     });
   };
   return (
-    <nav>
-      {user && (
-        <>
-          <Link to="/">Home</Link>
-          <Link to="/search">Search</Link>
-          <Link to="/wishlist">Wishlist</Link>
-        </>
-      )}
+    <nav className={styles.nav}>
+      <div className={styles.container}>
+        {user && (
+          <>
+            <Link to="/">Home</Link>
+            <Link to="/search">Search</Link>
+          </>
+        )}
 
-      {!user ? (
-        <>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
-        </>
-      ) : (
-        <button onClick={signUserOut}>Logout</button>
-      )}
+        {user && <button onClick={signUserOut}>Logout</button>}
+      </div>
     </nav>
   );
 }

@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.nav a:link,
+.nav a:active,
+.nav a:visited {
+  color: var(--color-dark);
+  font-weight: 500;
+  transition: ease-in 0.1s;
+}
+
+.nav a:hover {
+  filter: brightness(250%);
+}

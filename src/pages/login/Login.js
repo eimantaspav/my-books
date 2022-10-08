@@ -1,4 +1,5 @@
 import styles from './Login.module.css';
+import loginImg from '../../img/loginImg.svg';
 // services
 import { auth, googleProvider } from '../../firebase/config';
 import { signInWithPopup } from 'firebase/auth';
@@ -19,8 +20,13 @@ export default function Login({ setIsAuth }) {
 
   return (
     <div className={styles.login}>
-      <p>Sign In With Google</p>
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+      <div className={styles.login__container}>
+        <h1>
+          Welcome! <br /> Please sign in to search for books
+        </h1>
+        <img src={loginImg} alt="" />
+        <button onClick={signInWithGoogle}>Sign in with Google</button>
+      </div>
     </div>
   );
 }

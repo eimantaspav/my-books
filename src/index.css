@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* Variables */
+
 :root {
   /*  Text/background colors */
-  --color-light: #fff;
-  --color-dark: #2c3333;
-  --color-accent: #2666cf;
+  --color-white: #fff;
+  --color-dark: #2c3639;
+  --color-accent: #a27b5c;
+  /* Transition speed */
+  --transition-default: ease-in 0.1s;
 }
+
 /* Box sizing rules */
 *,
 *::before,
@@ -26,6 +30,11 @@ dl,
 dd {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
+}
+
+/* Default font-size */
+html {
+  font-size: 62.5%;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -87,4 +96,57 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Default text color */
+body {
+  color: var(--color-dark);
+}
+/* Default text settings */
+a,
+button {
+  font-size: 2.5rem;
+}
+
+h1 {
+  margin-bottom: 4rem;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+h2 {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+input {
+  font-size: 2.5rem;
+}
+
+/* Default button styling */
+button {
+  cursor: pointer;
+  background: none;
+  font-weight: 500;
+  border: none;
+  color: var(--color-dark);
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.7);
+  transition: var(--transition-default);
+}
+
+button:hover {
+  filter: brightness(250%);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 5);
+}
+
+/* Default section container width */
+.container {
+  width: 90%;
 }
