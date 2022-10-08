@@ -5,7 +5,7 @@ import BookCard from '../../components/BookCard/BookCard';
 // hooks
 import { useState } from 'react';
 //
-export default function Search() {
+export default function Search({ isAuth }) {
   const [search, setSearch] = useState('');
   const [bookData, setBookData] = useState([]);
   //
@@ -18,7 +18,6 @@ export default function Search() {
         console.log(err.message);
       });
   };
-
   return (
     <>
       <form onSubmit={searchBook}>
@@ -31,7 +30,7 @@ export default function Search() {
         <button type="submit">Search</button>
       </form>
 
-      <BookCard books={bookData} />
+      <BookCard books={bookData} isAuth={isAuth} />
     </>
   );
 }

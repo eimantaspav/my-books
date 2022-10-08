@@ -24,8 +24,10 @@ export default function Home({ user }) {
       };
       getReadingList();
       console.log('get data execute');
+    } else {
+      navigate('/login');
     }
-  }, [auth.currentUser]);
+  }, [user]);
   //
   return (
     <div>
