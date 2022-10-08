@@ -25,6 +25,7 @@ function App() {
         setIsAuth(true);
       }
       console.log(currentUser);
+      console.log('user executed');
     });
   }, [user]);
   //
@@ -32,7 +33,7 @@ function App() {
     <BrowserRouter>
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth} />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home user={user} />}></Route>
         <Route path="/search" element={<Search />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />}></Route>

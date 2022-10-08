@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 import { auth, db } from '../../firebase/config';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
-export default function Home() {
+export default function Home({ user }) {
   const librariesCollectionRef = collection(db, 'Libraries');
   const [readingList, setReadingList] = useState([]);
-  const q = query(librariesCollectionRef, where('uid', '==', auth.currentUser.uid));
+  const q = query(librariesCollectionRef, where('uid', '==', user.uid));
 
   //
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function Home() {
       setReadingList(data.docs.map(doc => ({ ...doc.data() })));
     };
     getReadingList();
-    console.log(readingList);
+    console.log('get data execute');
   }, []);
   //
   return (
