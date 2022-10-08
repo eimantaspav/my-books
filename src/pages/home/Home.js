@@ -4,21 +4,28 @@ import { useEffect, useState } from 'react';
 //services
 import { auth, db } from '../../firebase/config';
 import { collection, getDocs, query, where } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home({ user }) {
   const librariesCollectionRef = collection(db, 'Libraries');
   const [readingList, setReadingList] = useState([]);
-  const q = query(librariesCollectionRef, where('uid', '==', user.uid));
+
+  let navigate = useNavigate();
 
   //
+
   useEffect(() => {
-    const getReadingList = async () => {
-      const data = await getDocs(q);
-      setReadingList(data.docs.map(doc => ({ ...doc.data() })));
-    };
-    getReadingList();
-    console.log('get data execute');
-  }, []);
+    if (user.uid != null) {
+      const q = query(librariesCollectionRef, where('uid', '==', user.uid));
+
+      const getReadingList = async () => {
+        const data = await getDocs(q);
+        setReadingList(data.docs.map(doc => ({ ...doc.data() })));
+      };
+      getReadingList();
+      console.log('get data execute');
+    }
+  }, [auth.currentUser]);
   //
   return (
     <div>

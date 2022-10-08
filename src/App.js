@@ -21,13 +21,9 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
-      if (user) {
-        setIsAuth(true);
-      }
-      console.log(currentUser);
       console.log('user executed');
     });
-  }, [user]);
+  }, []);
   //
   return (
     <BrowserRouter>
