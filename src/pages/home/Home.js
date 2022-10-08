@@ -2,16 +2,18 @@ import styles from './Home.module.css';
 // hooks
 import { useEffect, useState } from 'react';
 //services
-import { db } from '../../firebase/config';
-import { collection, getDocs } from 'firebase/firestore';
+import { auth, db } from '../../firebase/config';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 export default function Home() {
   const librariesCollectionRef = collection(db, 'Libraries');
   const [readingList, setReadingList] = useState([]);
+  const q = query(librariesCollectionRef, where('uid', '==', auth.currentUser.uid));
+
   //
   useEffect(() => {
     const getReadingList = async () => {
-      const data = await getDocs(librariesCollectionRef);
+      const data = await getDocs(q);
       setReadingList(data.docs.map(doc => ({ ...doc.data() })));
     };
     getReadingList();
