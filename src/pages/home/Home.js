@@ -61,7 +61,7 @@ export default function Home({ user }) {
                     deleteBook(book.id);
                   }}
                 >
-                  Delete
+                  Remove
                 </button>
               </div>
             );

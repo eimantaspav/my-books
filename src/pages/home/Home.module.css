@@ -1,4 +1,7 @@
 .home {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
 }
 
 .home h2 {

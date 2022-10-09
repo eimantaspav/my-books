@@ -31,7 +31,7 @@ export default function BookCard({ books }) {
                     addBook(title, thumbnail, book.volumeInfo);
                   }}
                 >
-                  Add to reading list
+                  Add
                 </button>
               </div>
             );
