@@ -4,8 +4,8 @@ This project was built using React.js. <br>It uses Firebase authentication and d
 
 Functionality
 
-Login via google sign in.
-Search for books via the Google Books API.
-Add books to your library.
-Each user has individual library.
+Login via google sign in.<br>
+Search for books via the Google Books API.<br>
+Add books to your library.<br>
+Each user has individual library.<br>
 Delete books from your library.
