@@ -9,7 +9,7 @@
 }
 
 .container {
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .home__empty {
@@ -23,7 +23,7 @@
 }
 
 .home__empty img {
-  width: 20%;
+  width: 25%;
 }
 
 .home__books {
@@ -40,7 +40,20 @@
   align-items: center;
   text-align: center;
   gap: 1rem;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  border-radius: 3px;
 }
 .home__card img {
   width: 10rem;
+}
+
+@media screen and (max-width: 647px) {
+  .home__empty img {
+    width: 70%;
+  }
+
+  .home h1 {
+    font-size: 3rem;
+  }
 }

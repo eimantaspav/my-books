@@ -21,11 +21,11 @@ function App() {
       setUser(currentUser);
       setIsAuth(true);
     });
-  }, []);
+  }, [user]);
   //
   return (
     <BrowserRouter>
-      <Navbar user={user} setIsAuth={setIsAuth} />
+      {isAuth && <Navbar user={user} setIsAuth={setIsAuth} />}
       <Routes>
         <Route path="/" element={<Home user={user} />}></Route>
         <Route path="/search" element={<Search />} isAuth={isAuth}></Route>

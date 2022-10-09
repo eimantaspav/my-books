@@ -1,9 +1,9 @@
 .search {
   display: flex;
   flex-direction: column;
-  gap: 10rem;
   justify-content: center;
   min-height: 90vh;
+  gap: 5rem;
 }
 
 .search form {
@@ -22,6 +22,7 @@
   padding: 0.2rem;
   text-indent: 1rem;
   max-width: 100%;
+  border-radius: 3px;
 }
 .search input:focus {
   outline: 0 none;
@@ -50,4 +51,22 @@
 
 .search__empty h1 {
   max-width: 80%;
+}
+
+@media screen and (max-width: 647px) {
+  .search__empty img {
+    width: 54%;
+  }
+  .search__input {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .search__input button {
+    width: 100%;
+  }
+
+  .search h1 {
+    font-size: 3rem;
+  }
 }
